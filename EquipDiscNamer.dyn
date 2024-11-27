@@ -1,0 +1,224 @@
+{
+  "Uuid": "20cdfa78-5043-40b1-8356-0dab3109080d",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "EquipDiscNamer",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "7bb19b2b8dda4594833a1cf41fb48c05",
+      "Name": "Select Model Elements",
+      "Type": "selection",
+      "Type2": "hostSelection",
+      "Value": "15b904f9-6b50-4387-afe3-b9494e066a14-005ac14d",
+      "Description": "Select multiple elements from the Revit document.",
+      "SelectedIndex": 0
+    }
+  ],
+  "Outputs": [
+    {
+      "Id": "1e432dbb5f3446ccb8abe7133d04d0fb",
+      "Name": "Output",
+      "Type": "unknown",
+      "InitialValue": "",
+      "Description": "Visualizes a node's output"
+    }
+  ],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Nodes.DSModelElementsSelection, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "15b904f9-6b50-4387-afe3-b9494e066a14-005ac14d"
+      ],
+      "Id": "7bb19b2b8dda4594833a1cf41fb48c05",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "ae35698f1b72438c8feabed6b7735566",
+          "Name": "Elements",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select multiple elements from the Revit document."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "14de14fe-fa52-4bcf-a9ad-9decb573f1b7",
+      "FunctionType": "Graph",
+      "Id": "d3acac8af38b408194207dc61e15b5e6",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "da9cac94776d497f834daa4eea45b378",
+          "Name": "element",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5a56e6cc9a054de2ac9d9611e2843fee",
+          "Name": "OUT",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "verifies if the family type is \"EQ - Equipment Disconnect Switch\". The downstream device name is assigned to EQ_EquipmentDisconnectDownstreamDevice and EQ_EquipmentDisconnectNameCombined for each selected element if the family type check passes."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 545.0,
+      "WatchHeight": 152.0,
+      "Id": "1e432dbb5f3446ccb8abe7133d04d0fb",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "3911c03bbf3d40afa637fb056c34fcdf",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "47a8c74f58194016bb7c9f5c833e8b66",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "ae35698f1b72438c8feabed6b7735566",
+      "End": "da9cac94776d497f834daa4eea45b378",
+      "Id": "dae6fbaeff6b43cdba7f23e09afd8faa",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "5a56e6cc9a054de2ac9d9611e2843fee",
+      "End": "3911c03bbf3d40afa637fb056c34fcdf",
+      "Id": "32b12ec3eb014f1d8bcca2a4e7345067",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [
+    "14de14fe-fa52-4bcf-a9ad-9decb573f1b7"
+  ],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "GetEquipDiscFed.dyf",
+      "ReferenceType": "DYFFile",
+      "Nodes": [
+        "d3acac8af38b408194207dc61e15b5e6"
+      ]
+    }
+  ],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.19",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "6.1",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.19.3.6394",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "7bb19b2b8dda4594833a1cf41fb48c05",
+        "Name": "Select Model Elements",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 261.0,
+        "Y": 246.0
+      },
+      {
+        "Id": "d3acac8af38b408194207dc61e15b5e6",
+        "Name": "GetEquipDiscFed",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 605.736189801868,
+        "Y": 183.38702263594334
+      },
+      {
+        "Id": "1e432dbb5f3446ccb8abe7133d04d0fb",
+        "Name": "Output",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": true,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 884.24843541735368,
+        "Y": 259.70832788428316
+      }
+    ],
+    "Annotations": [],
+    "X": 535.069683315507,
+    "Y": 382.32218058221156,
+    "Zoom": 0.29955174267649892
+  }
+}

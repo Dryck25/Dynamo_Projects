@@ -1,0 +1,172 @@
+{
+  "Uuid": "a6d169ea-d3c4-409e-a8c8-f3cc45491fa6",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "UtilityPoleMountedXFRMNamer",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "d516be65eeda44b2a7712dc04cb5ac14",
+      "Name": "Select Model Elements",
+      "Type": "selection",
+      "Type2": "hostSelection",
+      "Value": "6170da74-78bb-499e-92f9-b3fa37f6c2b5-00599ce2,6170da74-78bb-499e-92f9-b3fa37f6c2b5-0059b3d0,6170da74-78bb-499e-92f9-b3fa37f6c2b5-0059bb69,6170da74-78bb-499e-92f9-b3fa37f6c2b5-0059c309",
+      "Description": "Select multiple elements from the Revit document.",
+      "SelectedIndex": 0
+    }
+  ],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "324e9da2-c627-4e82-92ba-bf09adf34463",
+      "FunctionType": "Graph",
+      "Id": "0e92ccaafa024838bcc356a9fb19c2b6",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "148124344852485692b3634a6e1eec70",
+          "Name": "element",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "7eea3dadb8274dd0b11b7c86c68b35b4",
+          "Name": "OUT",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": ""
+    },
+    {
+      "ConcreteType": "Dynamo.Nodes.DSModelElementsSelection, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "6170da74-78bb-499e-92f9-b3fa37f6c2b5-00599ce2",
+        "6170da74-78bb-499e-92f9-b3fa37f6c2b5-0059b3d0",
+        "6170da74-78bb-499e-92f9-b3fa37f6c2b5-0059bb69",
+        "6170da74-78bb-499e-92f9-b3fa37f6c2b5-0059c309"
+      ],
+      "Id": "d516be65eeda44b2a7712dc04cb5ac14",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "569a3b1ec86648849cf3eabd3069cb06",
+          "Name": "Elements",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select multiple elements from the Revit document."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "569a3b1ec86648849cf3eabd3069cb06",
+      "End": "148124344852485692b3634a6e1eec70",
+      "Id": "84c9c6d673ad4e05a4b5e5ee7d4312ce",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [
+    "324e9da2-c627-4e82-92ba-bf09adf34463"
+  ],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "GetPoleMountedTransf.dyf",
+      "ReferenceType": "DYFFile",
+      "Nodes": [
+        "0e92ccaafa024838bcc356a9fb19c2b6"
+      ]
+    }
+  ],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.19",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "6.1",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.19.3.6394",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "0e92ccaafa024838bcc356a9fb19c2b6",
+        "Name": "GetPoleMountedTransf",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 778.0,
+        "Y": 391.0
+      },
+      {
+        "Id": "d516be65eeda44b2a7712dc04cb5ac14",
+        "Name": "Select Model Elements",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 269.0,
+        "Y": 288.0
+      }
+    ],
+    "Annotations": [],
+    "X": 0.0,
+    "Y": 0.0,
+    "Zoom": 1.0
+  }
+}

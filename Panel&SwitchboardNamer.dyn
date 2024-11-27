@@ -1,0 +1,227 @@
+{
+  "Uuid": "20cdfa78-5043-40b1-8356-0dab3109080d",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Panel&SwitchboardNamer",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "9de7036f03cc4363a20b223fdd3c67f9",
+      "Name": "Select Model Elements",
+      "Type": "selection",
+      "Type2": "hostSelection",
+      "Value": "1bc52c66-34a5-4088-be29-7222a6e4c2e1-005759e2,1bc52c66-34a5-4088-be29-7222a6e4c2e1-00575a08,83724dfc-5881-44ce-843b-8ef86e9fd16b-0057f1fa,32dcde27-a767-4181-9f05-48a1888299c1-0057f54e",
+      "Description": "Select multiple elements from the Revit document.",
+      "SelectedIndex": 0
+    }
+  ],
+  "Outputs": [
+    {
+      "Id": "3ac38563a564417a9c7126ca0ddbb16c",
+      "Name": "Watch",
+      "Type": "unknown",
+      "InitialValue": "",
+      "Description": "Visualizes a node's output"
+    }
+  ],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Nodes.DSModelElementsSelection, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "1bc52c66-34a5-4088-be29-7222a6e4c2e1-005759e2",
+        "1bc52c66-34a5-4088-be29-7222a6e4c2e1-00575a08",
+        "83724dfc-5881-44ce-843b-8ef86e9fd16b-0057f1fa",
+        "32dcde27-a767-4181-9f05-48a1888299c1-0057f54e"
+      ],
+      "Id": "9de7036f03cc4363a20b223fdd3c67f9",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "239d20b156584f549754e5759479bcf8",
+          "Name": "Elements",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select multiple elements from the Revit document."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
+      "Id": "3ac38563a564417a9c7126ca0ddbb16c",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "e8f36e8eed824e0ba4d7f292a5e45ebf",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ae6b5246f0b8496dbc5581aaccea5ea7",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "251ec570-53f3-421b-8425-ad9b8162cdce",
+      "FunctionType": "Graph",
+      "Id": "49ac2a05509e45169e21eeeb7705ef18",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "6f9a0ea0b6bd41d28ebf1e00142bfa6b",
+          "Name": "element",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4d842117b674449da1e6016b29568989",
+          "Name": "OUT",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Retrieves Parameter Values: Collects the values for the specified parameters and filters the \"Level\" parameter to include only numeric characters.                                                                                         - Collects parameter values and filters the \"Level\" value to include only numbers.                                                                                                            - Tracks similar parameter combinations, incrementing an alphabetic index (A, B, C, etc.) for repeated cases.                                                   - Generates a unique identifier by appending the index to the concatenated parameter values.                                                                                          - Updates Revit parameters: Sets \"EQ_EquipmentNameCombined\" to the unique string and \"EQ_Identifier\" to the index.                                                                                               Outputs the list of \"EQ_EquipmentNameCombined\" values for all elements.   "
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "239d20b156584f549754e5759479bcf8",
+      "End": "6f9a0ea0b6bd41d28ebf1e00142bfa6b",
+      "Id": "d15f28c59ade4dcc8ab2a399e992f32c",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "4d842117b674449da1e6016b29568989",
+      "End": "e8f36e8eed824e0ba4d7f292a5e45ebf",
+      "Id": "433745a8b4b04575b1cb3a09b0cbf72a",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [
+    "251ec570-53f3-421b-8425-ad9b8162cdce"
+  ],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "GetElementNameCombined.dyf",
+      "ReferenceType": "DYFFile",
+      "Nodes": [
+        "49ac2a05509e45169e21eeeb7705ef18"
+      ]
+    }
+  ],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.19",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "6.1",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.19.3.6394",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "9de7036f03cc4363a20b223fdd3c67f9",
+        "Name": "Select Model Elements",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -76.409694784383476,
+        "Y": 648.33942651726693
+      },
+      {
+        "Id": "3ac38563a564417a9c7126ca0ddbb16c",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": true,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 710.7664136863101,
+        "Y": 619.331109802542
+      },
+      {
+        "Id": "49ac2a05509e45169e21eeeb7705ef18",
+        "Name": "GetElementNameCombined",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 302.8009889126219,
+        "Y": 506.16208055922993
+      }
+    ],
+    "Annotations": [],
+    "X": 115.74807789021247,
+    "Y": -381.5064606863989,
+    "Zoom": 0.943099852271511
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "Uuid": "20cdfa78-5043-40b1-8356-0dab3109080d",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "CTCANNamer",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "95ee017e52134e19a35a3e4598dac897",
+      "Name": "Select Model Elements",
+      "Type": "selection",
+      "Type2": "hostSelection",
+      "Value": "ab06d849-c8a8-402e-a35d-fc48523c311e-0058c24e,ab06d849-c8a8-402e-a35d-fc48523c311e-0058cc9c",
+      "Description": "Select multiple elements from the Revit document.",
+      "SelectedIndex": 0
+    }
+  ],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Nodes.DSModelElementsSelection, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "ab06d849-c8a8-402e-a35d-fc48523c311e-0058c24e",
+        "ab06d849-c8a8-402e-a35d-fc48523c311e-0058cc9c"
+      ],
+      "Id": "95ee017e52134e19a35a3e4598dac897",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "1fa13401e58b446a8bdd55a319900a7e",
+          "Name": "Elements",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select multiple elements from the Revit document."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "c9b3887f-67fa-41d3-b118-82fc5470f15d",
+      "FunctionType": "Graph",
+      "Id": "e6f795c5963d426284cbab9c85419d24",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "195b8927a5754293b23fa550e2498252",
+          "Name": "element",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b46f0b972e37434e8b43745e130e5cdd",
+          "Name": "OUT",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": ""
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "1fa13401e58b446a8bdd55a319900a7e",
+      "End": "195b8927a5754293b23fa550e2498252",
+      "Id": "a04c2ec4abb340f5bf4e713d49596862",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [
+    "c9b3887f-67fa-41d3-b118-82fc5470f15d"
+  ],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "GetCTCAN.dyf",
+      "ReferenceType": "DYFFile",
+      "Nodes": [
+        "e6f795c5963d426284cbab9c85419d24"
+      ]
+    }
+  ],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.19",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "6.1",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.19.3.6394",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "95ee017e52134e19a35a3e4598dac897",
+        "Name": "Select Model Elements",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 216.0,
+        "Y": 274.0
+      },
+      {
+        "Id": "e6f795c5963d426284cbab9c85419d24",
+        "Name": "GetCTCAN",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 693.0,
+        "Y": 356.0
+      }
+    ],
+    "Annotations": [],
+    "X": 0.0,
+    "Y": 0.0,
+    "Zoom": 1.0
+  }
+}

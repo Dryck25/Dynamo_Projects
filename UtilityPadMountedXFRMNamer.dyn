@@ -1,0 +1,224 @@
+{
+  "Uuid": "1e0c32f7-5a3e-49d1-b98e-00a38005454d",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "UtilityPadMountedXFRMNamer",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "9ef820366dac4ad9ab05df9f4e4002b5",
+      "Name": "Select Model Elements",
+      "Type": "selection",
+      "Type2": "hostSelection",
+      "Value": "6170da74-78bb-499e-92f9-b3fa37f6c2b5-00597238",
+      "Description": "Select multiple elements from the Revit document.",
+      "SelectedIndex": 0
+    }
+  ],
+  "Outputs": [
+    {
+      "Id": "4d8e60bf924643cfbabc41339f214010",
+      "Name": "Watch",
+      "Type": "unknown",
+      "InitialValue": "",
+      "Description": "Visualizes a node's output"
+    }
+  ],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Nodes.DSModelElementsSelection, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "6170da74-78bb-499e-92f9-b3fa37f6c2b5-00597238"
+      ],
+      "Id": "9ef820366dac4ad9ab05df9f4e4002b5",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "ec7e5164fca648298d497e707c326b98",
+          "Name": "Elements",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select multiple elements from the Revit document."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "ef271479-67ee-446d-a464-b94c6210f57c",
+      "FunctionType": "Graph",
+      "Id": "5e02069cd9d34330bef3f35bb3260314",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "e058c813dba64b199c53b7da1047a6ac",
+          "Name": "element",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "eee84ff3574149ca944e07a6db4991ae",
+          "Name": "OUT",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": ""
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
+      "Id": "4d8e60bf924643cfbabc41339f214010",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "edd9f128a7664126a1b03b7d73d8f399",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5de352b6bba240a087820186a68fe970",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "ec7e5164fca648298d497e707c326b98",
+      "End": "e058c813dba64b199c53b7da1047a6ac",
+      "Id": "a4421b41210f4b4da6ad3fa925d1d150",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "eee84ff3574149ca944e07a6db4991ae",
+      "End": "edd9f128a7664126a1b03b7d73d8f399",
+      "Id": "92155ac723504894b5f47e0709981408",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [
+    "ef271479-67ee-446d-a464-b94c6210f57c"
+  ],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "GetPadMountedTransf.dyf",
+      "ReferenceType": "DYFFile",
+      "Nodes": [
+        "5e02069cd9d34330bef3f35bb3260314"
+      ]
+    }
+  ],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.19",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "6.1",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.19.3.6394",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "9ef820366dac4ad9ab05df9f4e4002b5",
+        "Name": "Select Model Elements",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 239.0,
+        "Y": 203.0
+      },
+      {
+        "Id": "5e02069cd9d34330bef3f35bb3260314",
+        "Name": "GetPadMountedTransf",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 614.0,
+        "Y": 114.0
+      },
+      {
+        "Id": "4d8e60bf924643cfbabc41339f214010",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": true,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 951.0,
+        "Y": 243.0
+      }
+    ],
+    "Annotations": [],
+    "X": 0.0,
+    "Y": 0.0,
+    "Zoom": 1.0
+  }
+}

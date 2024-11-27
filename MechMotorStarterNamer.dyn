@@ -1,0 +1,224 @@
+{
+  "Uuid": "20cdfa78-5043-40b1-8356-0dab3109080d",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "MechMotorStarterNamer",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "455e51c63bf946c8bdc7806c5ab4b3bb",
+      "Name": "Select Model Elements",
+      "Type": "selection",
+      "Type2": "hostSelection",
+      "Value": "15b904f9-6b50-4387-afe3-b9494e066a14-005ac220",
+      "Description": "Select multiple elements from the Revit document.",
+      "SelectedIndex": 0
+    }
+  ],
+  "Outputs": [
+    {
+      "Id": "19fcc281d47541a188990c34fa52195f",
+      "Name": "Watch",
+      "Type": "unknown",
+      "InitialValue": "",
+      "Description": "Visualizes a node's output"
+    }
+  ],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Nodes.DSModelElementsSelection, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "15b904f9-6b50-4387-afe3-b9494e066a14-005ac220"
+      ],
+      "Id": "455e51c63bf946c8bdc7806c5ab4b3bb",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "205749c25a87415daae3772d15963e00",
+          "Name": "Elements",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select multiple elements from the Revit document."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "4d570aed-606f-47f1-870f-b51b6ce7617b",
+      "FunctionType": "Graph",
+      "Id": "192ce675adba4e4da2297f37e5e71925",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "6074f537a85e43d49fad668f3598fb40",
+          "Name": "element",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ad8d31ff76894f0a9bc8319cb991329b",
+          "Name": "OUT",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "The script now checks for \"EQ - Mechanical Motor Starter\" .         The downstream device name is assigned to EQ_MechanicalMotorStarterDownstreamDevice and EQ_MechanicalMotorStarterNameCombined for each selected element that meets the family type check."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
+      "Id": "19fcc281d47541a188990c34fa52195f",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "e5aae68a28d2487cb303e126dc3e0fa4",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f153df74ad87465db2c782ae6d2d98c0",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "205749c25a87415daae3772d15963e00",
+      "End": "6074f537a85e43d49fad668f3598fb40",
+      "Id": "eeed90ca0e074257b8eee4ba901a9bd0",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "ad8d31ff76894f0a9bc8319cb991329b",
+      "End": "e5aae68a28d2487cb303e126dc3e0fa4",
+      "Id": "37f408655696444892f2d31ffc77cfd4",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [
+    "4d570aed-606f-47f1-870f-b51b6ce7617b"
+  ],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "GetMechMotorStarter.dyf",
+      "ReferenceType": "DYFFile",
+      "Nodes": [
+        "192ce675adba4e4da2297f37e5e71925"
+      ]
+    }
+  ],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.19",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "6.1",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.19.3.6394",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "455e51c63bf946c8bdc7806c5ab4b3bb",
+        "Name": "Select Model Elements",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 189.0,
+        "Y": 144.0
+      },
+      {
+        "Id": "192ce675adba4e4da2297f37e5e71925",
+        "Name": "GetMechMotorStarter",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 581.56198909766408,
+        "Y": 50.771850721863188
+      },
+      {
+        "Id": "19fcc281d47541a188990c34fa52195f",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": true,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 941.00769713425007,
+        "Y": 172.51524613414495
+      }
+    ],
+    "Annotations": [],
+    "X": 204.29060695865792,
+    "Y": 41.246712637308178,
+    "Zoom": 0.910063803931439
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "Uuid": "20cdfa78-5043-40b1-8356-0dab3109080d",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "BusGutterNamer",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "d066b194fca5443ba1a8c9a1787558ff",
+      "Name": "Select Model Elements",
+      "Type": "selection",
+      "Type2": "hostSelection",
+      "Value": "ab06d849-c8a8-402e-a35d-fc48523c311e-00589b7f",
+      "Description": "Select multiple elements from the Revit document.",
+      "SelectedIndex": 0
+    }
+  ],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "8e335dfe-b792-4d6e-bc7f-0200a4630073",
+      "FunctionType": "Graph",
+      "Id": "214f993e749b48658d3b558503b4860b",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "17f035d7477c4fd9b847ac21515a4661",
+          "Name": "element",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3d96efa2169f415cbe8180d562359fe7",
+          "Name": "OUT",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": ""
+    },
+    {
+      "ConcreteType": "Dynamo.Nodes.DSModelElementsSelection, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "ab06d849-c8a8-402e-a35d-fc48523c311e-00589b7f"
+      ],
+      "Id": "d066b194fca5443ba1a8c9a1787558ff",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "9659013c8fa54e2db383e693a4553e4b",
+          "Name": "Elements",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select multiple elements from the Revit document."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "9659013c8fa54e2db383e693a4553e4b",
+      "End": "17f035d7477c4fd9b847ac21515a4661",
+      "Id": "63cfd35f93fa4a009efbbd53413133d6",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [
+    "8e335dfe-b792-4d6e-bc7f-0200a4630073"
+  ],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "GetBusGutter.dyf",
+      "ReferenceType": "DYFFile",
+      "Nodes": [
+        "214f993e749b48658d3b558503b4860b"
+      ]
+    }
+  ],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.19",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "6.1",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.19.3.6394",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "214f993e749b48658d3b558503b4860b",
+        "Name": "GetBusGutter",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 778.0,
+        "Y": 391.0
+      },
+      {
+        "Id": "d066b194fca5443ba1a8c9a1787558ff",
+        "Name": "Select Model Elements",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 236.0,
+        "Y": 262.0
+      }
+    ],
+    "Annotations": [],
+    "X": 0.0,
+    "Y": 0.0,
+    "Zoom": 1.0
+  }
+}

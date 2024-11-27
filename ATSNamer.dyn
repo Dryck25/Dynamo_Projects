@@ -1,0 +1,173 @@
+{
+  "Uuid": "20cdfa78-5043-40b1-8356-0dab3109080d",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "ATSNamer",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "304330eba35e49d78fac8ec40a5f5872",
+      "Name": "Select Model Elements",
+      "Type": "selection",
+      "Type2": "hostSelection",
+      "Value": "ab06d849-c8a8-402e-a35d-fc48523c311e-00584270,ab06d849-c8a8-402e-a35d-fc48523c311e-005842a8,ab06d849-c8a8-402e-a35d-fc48523c311e-005842d1,ab06d849-c8a8-402e-a35d-fc48523c311e-0058430f,ab06d849-c8a8-402e-a35d-fc48523c311e-00584340",
+      "Description": "Select multiple elements from the Revit document.",
+      "SelectedIndex": 0
+    }
+  ],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "40c47913-8842-4e34-a8dc-e9a0037fdb75",
+      "FunctionType": "Graph",
+      "Id": "990a7658d7c74b78999af97ef5614db3",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "f50d2e7dc2e04ea8ba936d5f1603aadd",
+          "Name": "element",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4c33d3371c1d4bdc8fa4e6ba7095ad17",
+          "Name": "OUT",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": ""
+    },
+    {
+      "ConcreteType": "Dynamo.Nodes.DSModelElementsSelection, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "ab06d849-c8a8-402e-a35d-fc48523c311e-00584270",
+        "ab06d849-c8a8-402e-a35d-fc48523c311e-005842a8",
+        "ab06d849-c8a8-402e-a35d-fc48523c311e-005842d1",
+        "ab06d849-c8a8-402e-a35d-fc48523c311e-0058430f",
+        "ab06d849-c8a8-402e-a35d-fc48523c311e-00584340"
+      ],
+      "Id": "304330eba35e49d78fac8ec40a5f5872",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "696bb89df25545db80083ec2a1eaf3aa",
+          "Name": "Elements",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select multiple elements from the Revit document."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "696bb89df25545db80083ec2a1eaf3aa",
+      "End": "f50d2e7dc2e04ea8ba936d5f1603aadd",
+      "Id": "f89d74fb7d064805a9ca6f444181e35a",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [
+    "40c47913-8842-4e34-a8dc-e9a0037fdb75"
+  ],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "GetATS.dyf",
+      "ReferenceType": "DYFFile",
+      "Nodes": [
+        "990a7658d7c74b78999af97ef5614db3"
+      ]
+    }
+  ],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.19",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "6.1",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.19.3.6394",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "990a7658d7c74b78999af97ef5614db3",
+        "Name": "GetATS",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 589.0,
+        "Y": 196.0
+      },
+      {
+        "Id": "304330eba35e49d78fac8ec40a5f5872",
+        "Name": "Select Model Elements",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 125.0,
+        "Y": 197.0
+      }
+    ],
+    "Annotations": [],
+    "X": 0.0,
+    "Y": 0.0,
+    "Zoom": 1.0
+  }
+}

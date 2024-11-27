@@ -1,0 +1,230 @@
+{
+  "Uuid": "20cdfa78-5043-40b1-8356-0dab3109080d",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "TransformerNamer",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "fc3b1646dab04affb19cb3de8bb06b93",
+      "Name": "Select Model Elements",
+      "Type": "selection",
+      "Type2": "hostSelection",
+      "Value": "42175a38-5ce3-4bcb-b004-fdc2668f8b7a-0055ff1a,802894bf-2021-40aa-b96f-3ea149f61227-0056075b,d1873a8e-ec83-47c7-81e3-466194a44072-00574c3e,d1873a8e-ec83-47c7-81e3-466194a44072-00574c6e,d37440b2-2550-426f-bd55-02185f6e5342-00574cb3,1bc52c66-34a5-4088-be29-7222a6e4c2e1-005759e2,32dcde27-a767-4181-9f05-48a1888299c1-0057f54e",
+      "Description": "Select multiple elements from the Revit document.",
+      "SelectedIndex": 0
+    }
+  ],
+  "Outputs": [
+    {
+      "Id": "faadf68be9c2425982240c80942aab1e",
+      "Name": "Watch",
+      "Type": "unknown",
+      "InitialValue": "",
+      "Description": "Visualizes a node's output"
+    }
+  ],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "4680c32d-3c64-4754-b882-26c920c893aa",
+      "FunctionType": "Graph",
+      "Id": "957478aa19a64cd192bf27b8f0d30d89",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "c98b4394d9bf41cead594af638f1c31b",
+          "Name": "element",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "cb481964bdbb454f8db3ebe1a9e9a331",
+          "Name": "OUT",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "It ouputs the downstream and upstream connections of the Transformer"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
+      "Id": "faadf68be9c2425982240c80942aab1e",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "5cf4da1536704fdf90bcc4bbfae0ce6d",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "96632a6749254d92875fb3348b08e2ff",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "Dynamo.Nodes.DSModelElementsSelection, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "42175a38-5ce3-4bcb-b004-fdc2668f8b7a-0055ff1a",
+        "802894bf-2021-40aa-b96f-3ea149f61227-0056075b",
+        "d1873a8e-ec83-47c7-81e3-466194a44072-00574c3e",
+        "d1873a8e-ec83-47c7-81e3-466194a44072-00574c6e",
+        "d37440b2-2550-426f-bd55-02185f6e5342-00574cb3",
+        "1bc52c66-34a5-4088-be29-7222a6e4c2e1-005759e2",
+        "32dcde27-a767-4181-9f05-48a1888299c1-0057f54e"
+      ],
+      "Id": "fc3b1646dab04affb19cb3de8bb06b93",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "0a4562cca9fa42918c804f2a04e6c1b5",
+          "Name": "Elements",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select multiple elements from the Revit document."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "cb481964bdbb454f8db3ebe1a9e9a331",
+      "End": "5cf4da1536704fdf90bcc4bbfae0ce6d",
+      "Id": "22eb0e19da364b36ba92770aff40903f",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "0a4562cca9fa42918c804f2a04e6c1b5",
+      "End": "c98b4394d9bf41cead594af638f1c31b",
+      "Id": "7930ee3ab6f74e98a3daa91cefe45e5e",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [
+    "4680c32d-3c64-4754-b882-26c920c893aa"
+  ],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "GetTransformerFedsFeed.dyf",
+      "ReferenceType": "DYFFile",
+      "Nodes": [
+        "957478aa19a64cd192bf27b8f0d30d89"
+      ]
+    }
+  ],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.19",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "6.1",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.19.3.6394",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "957478aa19a64cd192bf27b8f0d30d89",
+        "Name": "GetTransformerFedsFeed",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 575.16237977360254,
+        "Y": 79.516886490839823
+      },
+      {
+        "Id": "faadf68be9c2425982240c80942aab1e",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": true,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1063.0257213583845,
+        "Y": 79.499067949975654
+      },
+      {
+        "Id": "fc3b1646dab04affb19cb3de8bb06b93",
+        "Name": "Select Model Elements",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 162.5778879176267,
+        "Y": 185.99831764007268
+      }
+    ],
+    "Annotations": [],
+    "X": -180.31367852324172,
+    "Y": 23.117912633812921,
+    "Zoom": 1.2198072017254968
+  }
+}

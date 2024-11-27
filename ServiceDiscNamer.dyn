@@ -1,0 +1,170 @@
+{
+  "Uuid": "0fbd0c35-39b7-40c3-b585-bd09cc84d97e",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "ServiceDiscNamer",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "fc5d29b5c0ad4748a16e958fbcd44559",
+      "Name": "Select Model Elements",
+      "Type": "selection",
+      "Type2": "hostSelection",
+      "Value": "6170da74-78bb-499e-92f9-b3fa37f6c2b5-005985fb,6170da74-78bb-499e-92f9-b3fa37f6c2b5-00598b8a",
+      "Description": "Select multiple elements from the Revit document.",
+      "SelectedIndex": 0
+    }
+  ],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Nodes.DSModelElementsSelection, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "6170da74-78bb-499e-92f9-b3fa37f6c2b5-005985fb",
+        "6170da74-78bb-499e-92f9-b3fa37f6c2b5-00598b8a"
+      ],
+      "Id": "fc5d29b5c0ad4748a16e958fbcd44559",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "c53392796cbe4a13b4178b54d351a931",
+          "Name": "Elements",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select multiple elements from the Revit document."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "785a46d1-7522-4820-b719-243f5bb2c156",
+      "FunctionType": "Graph",
+      "Id": "83a14d2e56734cd6bfb7aa727c2dbf4a",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "24968fd73ef5466dbc5f6e95d53185c0",
+          "Name": "element",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "07f7df7a18264603876f29544ae87ab3",
+          "Name": "OUT",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": ""
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "c53392796cbe4a13b4178b54d351a931",
+      "End": "24968fd73ef5466dbc5f6e95d53185c0",
+      "Id": "8c0017955e87465f983176fefda703bf",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [
+    "785a46d1-7522-4820-b719-243f5bb2c156"
+  ],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "GetServiceDisc.dyf",
+      "ReferenceType": "DYFFile",
+      "Nodes": [
+        "83a14d2e56734cd6bfb7aa727c2dbf4a"
+      ]
+    }
+  ],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.19",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "6.1",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.19.3.6394",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "fc5d29b5c0ad4748a16e958fbcd44559",
+        "Name": "Select Model Elements",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 165.0,
+        "Y": 184.0
+      },
+      {
+        "Id": "83a14d2e56734cd6bfb7aa727c2dbf4a",
+        "Name": "GetServiceDisc",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 602.0,
+        "Y": 268.0
+      }
+    ],
+    "Annotations": [],
+    "X": 0.0,
+    "Y": 0.0,
+    "Zoom": 1.0
+  }
+}

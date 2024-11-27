@@ -1,0 +1,224 @@
+{
+  "Uuid": "c8ea6226-1262-4052-8730-a1fb43e9d2a6",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "MechComboMotorStarterDiscNamer",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "03c09d04db8b46a8804ee862bf7239d5",
+      "Name": "Select Model Elements",
+      "Type": "selection",
+      "Type2": "hostSelection",
+      "Value": "15b904f9-6b50-4387-afe3-b9494e066a14-005ac1cb",
+      "Description": "Select multiple elements from the Revit document.",
+      "SelectedIndex": 0
+    }
+  ],
+  "Outputs": [
+    {
+      "Id": "6d366d38960d4b54a5491ab313307656",
+      "Name": "Watch",
+      "Type": "unknown",
+      "InitialValue": "",
+      "Description": "Visualizes a node's output"
+    }
+  ],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Nodes.DSModelElementsSelection, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "15b904f9-6b50-4387-afe3-b9494e066a14-005ac1cb"
+      ],
+      "Id": "03c09d04db8b46a8804ee862bf7239d5",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "8be9c0e519894f7ca5c6f8e15afd93b0",
+          "Name": "Elements",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select multiple elements from the Revit document."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "2d0d475f-47e6-4713-8ce6-3c9d88d01a1d",
+      "FunctionType": "Graph",
+      "Id": "742085937a0f4e54a4d704c3979e390c",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "c40c982d44ae4a68bcabad8bf081fe35",
+          "Name": "element",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5e860c894dfc4463a0e8291a89fa323d",
+          "Name": "OUT",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": ""
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 50.0,
+      "WatchHeight": 38.0,
+      "Id": "6d366d38960d4b54a5491ab313307656",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "cbcc9f75ac23484a85360cf188f4b3a9",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "7beba1e0ca93451faf15d61c1db8a824",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "8be9c0e519894f7ca5c6f8e15afd93b0",
+      "End": "c40c982d44ae4a68bcabad8bf081fe35",
+      "Id": "0298da6422974401b69bf43e8402a459",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "5e860c894dfc4463a0e8291a89fa323d",
+      "End": "cbcc9f75ac23484a85360cf188f4b3a9",
+      "Id": "b7736d3faf764a9491b9252a95487037",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [
+    "2d0d475f-47e6-4713-8ce6-3c9d88d01a1d"
+  ],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "GetMechCombMotorStarterDisc.dyf",
+      "ReferenceType": "DYFFile",
+      "Nodes": [
+        "742085937a0f4e54a4d704c3979e390c"
+      ]
+    }
+  ],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.19",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "6.1",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.19.3.6394",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "03c09d04db8b46a8804ee862bf7239d5",
+        "Name": "Select Model Elements",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 30.507465140267641,
+        "Y": 163.10537103326823
+      },
+      {
+        "Id": "742085937a0f4e54a4d704c3979e390c",
+        "Name": "GetMechCombMotorStarterDisc",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 418.84745480131824,
+        "Y": 110.35659294303576
+      },
+      {
+        "Id": "6d366d38960d4b54a5491ab313307656",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": true,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 917.12181787084683,
+        "Y": 123.37132561720125
+      }
+    ],
+    "Annotations": [],
+    "X": 79.133150026281442,
+    "Y": 27.267305172709428,
+    "Zoom": 0.87323933894951811
+  }
+}

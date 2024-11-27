@@ -1,0 +1,225 @@
+{
+  "Uuid": "20cdfa78-5043-40b1-8356-0dab3109080d",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "MechEquipDiscNamer",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "6ea7f47bbd7f4ef68c81ec545b75a4af",
+      "Name": "Select Model Elements",
+      "Type": "selection",
+      "Type2": "hostSelection",
+      "Value": "2935b6a1-84e3-410a-abae-ca929c798bd3-0058344f,2935b6a1-84e3-410a-abae-ca929c798bd3-00583493",
+      "Description": "Select multiple elements from the Revit document.",
+      "SelectedIndex": 0
+    }
+  ],
+  "Outputs": [
+    {
+      "Id": "a702f346359d4f91be5799c21c6fd0f8",
+      "Name": "Watch",
+      "Type": "unknown",
+      "InitialValue": "",
+      "Description": "Visualizes a node's output"
+    }
+  ],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Nodes.DSModelElementsSelection, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "2935b6a1-84e3-410a-abae-ca929c798bd3-0058344f",
+        "2935b6a1-84e3-410a-abae-ca929c798bd3-00583493"
+      ],
+      "Id": "6ea7f47bbd7f4ef68c81ec545b75a4af",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "9089ebfdf7a34ed8bf97654081e5296a",
+          "Name": "Elements",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select multiple elements from the Revit document."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "a4fbeaac-68cf-44fd-afa7-f4b6f0eadde7",
+      "FunctionType": "Graph",
+      "Id": "645f26991a684d3f892ea2d429433e4d",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "31900457fad04b2daa6e2c878af775e7",
+          "Name": "element",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0539fbe3c16741aaa84a8f264ef4d91a",
+          "Name": "OUT",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Checks if the device is a mechanical Equipment Disconnect Switch, then  Gathers downstream and upstream connections, and assigns the downstream device name to EQ_MechanicalEquipmentDisconnectDownstreamDevice and EQ_MechanicalEquipmentDisconnectNameCombined if the family check passes."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
+      "Id": "a702f346359d4f91be5799c21c6fd0f8",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "426a8c3c941547988cd2409c547ddba8",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "491fd13660bc4c2c8fe5f03a23e455a8",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "9089ebfdf7a34ed8bf97654081e5296a",
+      "End": "31900457fad04b2daa6e2c878af775e7",
+      "Id": "306b8590bbbc458caaf736cb5a5e7f50",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "0539fbe3c16741aaa84a8f264ef4d91a",
+      "End": "426a8c3c941547988cd2409c547ddba8",
+      "Id": "4f3697a7a757465686f962f85accf828",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [
+    "a4fbeaac-68cf-44fd-afa7-f4b6f0eadde7"
+  ],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "GetMechEquipDisc.dyf",
+      "ReferenceType": "DYFFile",
+      "Nodes": [
+        "645f26991a684d3f892ea2d429433e4d"
+      ]
+    }
+  ],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.19",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "6.1",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.19.3.6394",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "6ea7f47bbd7f4ef68c81ec545b75a4af",
+        "Name": "Select Model Elements",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 63.862763733260294,
+        "Y": 150.9929357635317
+      },
+      {
+        "Id": "645f26991a684d3f892ea2d429433e4d",
+        "Name": "GetMechEquipDisc",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 393.73461005626552,
+        "Y": 90.991926586893371
+      },
+      {
+        "Id": "a702f346359d4f91be5799c21c6fd0f8",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": true,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 833.91039560328375,
+        "Y": 236.24242303916526
+      }
+    ],
+    "Annotations": [],
+    "X": 180.8294230227815,
+    "Y": 32.030279135970147,
+    "Zoom": 0.88878922829715568
+  }
+}

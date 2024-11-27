@@ -1,0 +1,227 @@
+{
+  "Uuid": "20cdfa78-5043-40b1-8356-0dab3109080d",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "VFDNamer",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "58eed444e8e44a0f9f43930d37a09fbf",
+      "Name": "Select Model Elements",
+      "Type": "selection",
+      "Type2": "hostSelection",
+      "Value": "5a394e67-2a9e-4ca9-84c7-b8e4e15c9b40-005a0ea9,5a394e67-2a9e-4ca9-84c7-b8e4e15c9b40-005a0ed1,5a394e67-2a9e-4ca9-84c7-b8e4e15c9b40-005a0ef5,5a394e67-2a9e-4ca9-84c7-b8e4e15c9b40-005a0f20",
+      "Description": "Select multiple elements from the Revit document.",
+      "SelectedIndex": 0
+    }
+  ],
+  "Outputs": [
+    {
+      "Id": "18ebba3d728849f7a8b9e78891fbf8e4",
+      "Name": "Watch",
+      "Type": "unknown",
+      "InitialValue": "",
+      "Description": "Visualizes a node's output"
+    }
+  ],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Nodes.DSModelElementsSelection, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "5a394e67-2a9e-4ca9-84c7-b8e4e15c9b40-005a0ea9",
+        "5a394e67-2a9e-4ca9-84c7-b8e4e15c9b40-005a0ed1",
+        "5a394e67-2a9e-4ca9-84c7-b8e4e15c9b40-005a0ef5",
+        "5a394e67-2a9e-4ca9-84c7-b8e4e15c9b40-005a0f20"
+      ],
+      "Id": "58eed444e8e44a0f9f43930d37a09fbf",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "92b3d8698e1f45529c795b04d458b91e",
+          "Name": "Elements",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select multiple elements from the Revit document."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 441.0,
+      "WatchHeight": 271.0,
+      "Id": "18ebba3d728849f7a8b9e78891fbf8e4",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "df70c7865c604b31baf84a5083467d26",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "95c577fb23174f72a85908827c84432f",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "42a09dbc-138e-4810-9565-902751b5e70d",
+      "FunctionType": "Graph",
+      "Id": "28b90f7940744cddaa5499d23e624fef",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "e56370424cfb48348ae09127aca45a03",
+          "Name": "element",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6b3bcb1215014c87b2a706bd5fa2be72",
+          "Name": "OUT",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": ""
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "92b3d8698e1f45529c795b04d458b91e",
+      "End": "e56370424cfb48348ae09127aca45a03",
+      "Id": "faa3903ac2fd47c19d3a953cda463e58",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "6b3bcb1215014c87b2a706bd5fa2be72",
+      "End": "df70c7865c604b31baf84a5083467d26",
+      "Id": "b4dd3a7716e241a79f4fa7d574d98c43",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [
+    "42a09dbc-138e-4810-9565-902751b5e70d"
+  ],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "GetVFD.dyf",
+      "ReferenceType": "DYFFile",
+      "Nodes": [
+        "28b90f7940744cddaa5499d23e624fef"
+      ]
+    }
+  ],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.19",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "6.1",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.19.3.6394",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "58eed444e8e44a0f9f43930d37a09fbf",
+        "Name": "Select Model Elements",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 277.0,
+        "Y": 287.0
+      },
+      {
+        "Id": "18ebba3d728849f7a8b9e78891fbf8e4",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": true,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 960.0,
+        "Y": 307.0
+      },
+      {
+        "Id": "28b90f7940744cddaa5499d23e624fef",
+        "Name": "GetVFD",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 641.0,
+        "Y": 182.0
+      }
+    ],
+    "Annotations": [],
+    "X": 0.0,
+    "Y": 0.0,
+    "Zoom": 1.0
+  }
+}
